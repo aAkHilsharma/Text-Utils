@@ -5,21 +5,25 @@ export default function TextForm(props) {
     const handleUppercase = () => {
         let newText = text.toUpperCase();
         setText(newText);
+        props.showAlert("Converted to uppercase!", "success")
     }
     const handleLowercase = ()=>{
         let newText = text.toLowerCase();
         setText(newText);
+        props.showAlert("Converted to lowercase!", "success")
     }
     const handleOnChange = (event) => {
         setText(event.target.value)
     }
     const clearText = ()=>{
         setText('');
+        props.showAlert("Text cleared!", "success")
     }
     const copyText = ()=>{
         let text = document.getElementById("myBox");
         text.select();
         navigator.clipboard.writeText(text.value);
+        props.showAlert("Copied to clipboard!", "success")
     }
     return(
         <div className="conatainer" style={{color: props.mode === 'dark'? 'white': 'black'}}>
