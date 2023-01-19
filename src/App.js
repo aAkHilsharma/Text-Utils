@@ -8,7 +8,6 @@ import {BrowserRouter, Routes, Route} from 'react-router-dom'
 function App() {
   const [mode, setMode] = useState('light');
   const [alert, setAlert] = useState(null);
-
   const showAlert = (message, type)=> {
     setAlert({
       message: message,
@@ -29,7 +28,7 @@ function App() {
       showAlert("Light Mode Enabled", "success");
     }
   }
-
+  
   return (
     <BrowserRouter>  
       <div className="App">
