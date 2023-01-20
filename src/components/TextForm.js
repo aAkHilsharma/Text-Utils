@@ -31,10 +31,10 @@ export default function TextForm(props) {
             <div className="mb-3">
                 <textarea className="form-control" style={{backgroundColor: props.mode === 'dark'? 'grey': 'white', color: props.mode === 'dark'? 'white': 'black'}} id="myBox" rows="8" value={text} onChange={handleOnChange}></textarea>
             </div>
-            <button className="btn btn-primary mx-2 my-2" onClick={handleUppercase}>Convert to Uppercase</button>
-            <button className="btn btn-primary mx-2 my-2" onClick={handleLowercase}>Convert to Lowercase</button>
-            <button className="btn btn-primary mx-2 my-2" onClick={clearText}>Clear Text</button>
-            <button className="btn btn-primary mx-2 my-2" onClick={copyText}>Copy To Clipboard</button>
+            <button disabled={text.length === 0} className="btn btn-primary mx-2 my-2" onClick={handleUppercase}>Convert to Uppercase</button>
+            <button disabled={text.length === 0} className="btn btn-primary mx-2 my-2" onClick={handleLowercase}>Convert to Lowercase</button>
+            <button disabled={text.length === 0} className="btn btn-primary mx-2 my-2" onClick={clearText}>Clear Text</button>
+            <button disabled={text.length === 0} className="btn btn-primary mx-2 my-2" onClick={copyText}>Copy To Clipboard</button>
             <div className="container my-2">
                 <h2>Text Summary</h2>
                 <p className="my-0">{text.split(" ").filter((ele)=>{return ele.length!== 0}).length} Words and {text.length} characters</p>

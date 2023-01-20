@@ -36,7 +36,7 @@ function App() {
         <Alert alert={alert} />
         <div className="container my-3">
           <Routes>
-              <Route path="/" element={<TextForm heading="TextUtils - Word Counter, Character Counter, Case Convertion" mode={mode} showAlert={showAlert}/>} />
+              <Route path="*" element={<TextForm heading="TextUtils - Word Counter, Character Counter, Case Convertion" mode={mode} showAlert={showAlert}/>} />
               <Route path="/about" element={<About mode = {mode}/>}/>
           </Routes>
         </div>
